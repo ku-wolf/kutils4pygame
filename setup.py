@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Setup module for provisioner pkg."""
+"""Setup module for kutils4pygame pkg."""
 from setuptools import setup, find_packages
 import os
 import sys
@@ -7,13 +7,13 @@ import shutil
 import stat
 from setuptools.command.develop import develop
 from setuptools.command.install import install
+from abstract_requires import requires
 
 pkg_name = "kutils4pygame"
 parent_dir = os.path.dirname(os.path.realpath(__file__))
 data_src_dir = pkg_name + "_data"
 config_src_dir = pkg_name + "_config"
 defaults_location = os.path.join(pkg_name, "defaults")
-requires = list([])
 
 # Create scripts list
 script_dir = os.path.join(parent_dir, "bin")
@@ -24,11 +24,6 @@ try:
 
 except FileNotFoundError:
     pass
-
-pkg_has_config = not True
-if pkg_has_config:
-    requires.append("provision_py_proj")
-
 
 def copy_pkg_files():
     """Copy config and data files."""
@@ -77,8 +72,8 @@ def setuptools_setup():
         version="0.1",
         description="default description",
         url="default url",
-        author="Default Author",
-        author_email="author@default.com",
+        author="default author",
+        author_email="default author",
         license="gplv3.txt",
         packages=find_packages(),
         scripts=scripts,
