@@ -1,4 +1,3 @@
 requires = [
-    "appdirs",
     "pygame"
 ]
