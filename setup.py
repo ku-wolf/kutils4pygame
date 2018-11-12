@@ -45,6 +45,8 @@ def setuptools_setup():
         author_email="kevinuwolf@gmail.com",
         license="gplv3.txt",
         packages=find_packages(),
+        long_description=long_description,
+        long_description_content_type="text/markdown",
         scripts=scripts,
         install_requires=requires,
         setup_requires=requires,
